@@ -2,12 +2,13 @@ package launcher.machines;
 
 import launcher.machines.*;
 import launcher.weather.*;
+import launcher.machines.*;
 
-public class Helicopter extends Aircraft
+public class Baloon extends Aircraft
 {
   private WeatherTower weathertower;
 
-  public Helicopter(String name , Coordinates coordinates)
+  public Baloon(String name , Coordinates coordinates)
   {
 
   }

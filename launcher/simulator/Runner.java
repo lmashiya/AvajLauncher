@@ -1,0 +1,13 @@
+package launcher.machines;
+
+import launcher.weather.*;
+import launcher.machines.*;
+import java.io.*;
+
+public class Runner
+{
+  public static void main(String[] args)
+  {
+    System.out.println("In my main");
+  }
+}

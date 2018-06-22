@@ -1,8 +1,11 @@
-package launcher;
+package launcher.machines;
+
+import launcher.weather.*;
+import launcher.machines.*;
 
 public class JetPlane extends Aircraft
 {
-  private Weathertower weathertower;
+  private WeatherTower weathertower;
 
   public JetPlane(String name , Coordinates coordinates)
   {
@@ -14,7 +17,7 @@ public class JetPlane extends Aircraft
 
   }
 
-  public void registerTower(Weathertower weathertower)
+  public void registerTower(WeatherTower weathertower)
   {
 
   }
