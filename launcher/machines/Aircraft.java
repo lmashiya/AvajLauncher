@@ -26,7 +26,7 @@ public class Aircraft
 
   private long nextId()
   {
-
+    return this.id;
   }
 
   public long getId()
@@ -41,7 +41,8 @@ public class Aircraft
 
   public long createId()
   {
-    this.id = (long)(Math.random() * 1234567);
+    return this.id = (long)(Math.random() * 1234567);
+
   }
 
   static public void doReader(String path)
@@ -52,6 +53,9 @@ public class Aircraft
     {
       FileReader fr = new FileReader(path);
       BufferedReader br = new BufferedReader(fr);
+      line = br.readLine();
+      while(line != null)
+        System.out.println(line);
     }
       catch(FileNotFoundException e)
     {
@@ -59,15 +63,10 @@ public class Aircraft
       System.exit(0);
     }
 
-    try
-    {
-      line = br.readLine();
-      while(line != null)
-        System.out.println(line);
-    }
     catch(IOException ex)
     {
       System.out.println("They is no text to read");
+      System.exit(0);
     }
   }
 
