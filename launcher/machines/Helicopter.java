@@ -3,7 +3,7 @@ package launcher.machines;
 import launcher.machines.*;
 import launcher.weather.*;
 
-public class Helicopter extends Aircraft
+public class Helicopter extends Aircraft implements Flyable
 {
   private WeatherTower weathertower;
 

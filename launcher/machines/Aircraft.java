@@ -6,13 +6,14 @@ import launcher.machines.*;
 
 public class Aircraft
 {
-  protected long id;
+  protected static long id;
   protected String name;
   protected Coordinates coordinates;
-  private long idCounter;
+  private long idCounter = 0L;
 
  protected void Aircraft(String name, Coordinates coordinates)
   {
+    this.id = nextId();
     this.name = name;
     this.coordinates = coordinates;
   }
@@ -22,7 +23,7 @@ public class Aircraft
 
   private long nextId()
   {
-    return this.id;
+    return ++this.idCounter;
   }
 
   public long getId()
@@ -41,29 +42,5 @@ public class Aircraft
 
   }
 
-  public static void doReader(String path)
-  {
-    String line;
-
-    try
-    {
-      FileReader fr = new FileReader(path);
-      BufferedReader br = new BufferedReader(fr);
-      line = br.readLine();
-      while(line != null)
-        System.out.println(line);
-    }
-      catch(FileNotFoundException e)
-    {
-      System.out.println("File not found ...... " + path);
-      System.exit(0);
-    }
-
-    catch(IOException ex)
-    {
-      System.out.println("They is no text to read");
-      System.exit(0);
-    }
-  }
 
 }

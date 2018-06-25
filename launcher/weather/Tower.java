@@ -2,7 +2,9 @@ package launcher.weather;
 
 import launcher.weather.*;
 import launcher.machines.*;
-public class Tower
+import launcher.simulator.*;
+
+public class Tower extends WeatherTower
 {
     private Flyable observers;
 

@@ -4,7 +4,7 @@ import launcher.machines.*;
 import launcher.weather.*;
 import launcher.machines.*;
 
-public class Baloon extends Aircraft
+public class Baloon extends Aircraft implements Flyable
 {
   private WeatherTower weathertower;
 

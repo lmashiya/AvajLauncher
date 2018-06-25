@@ -3,6 +3,8 @@ package launcher.machines;
 
 import launcher.weather.*;
 import launcher.machines.*;
+import launcher.simulator.*;
+
 public class Coordinates
 {
     private int longitude;
