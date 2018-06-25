@@ -9,6 +9,7 @@ The first We Think Code Java Project
 
 #Third Step
 - Make the script to compile and run the programme ............so we can test the code as we move along simulating for our aircrafts......
+
 1.In the root directory.....touch run.sh
 2.open the run.sh using your favorite text editor
 3.paste this in there...find . 
