@@ -12,6 +12,6 @@ public class WeatherTower
 
     public void changeWeather()
     {
-
+      this.conditionsChanged();
     }
 }

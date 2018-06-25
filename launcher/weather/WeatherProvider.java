@@ -15,7 +15,8 @@ public class WeatherProvider
 
   public WeatherProvider getProvider()
   {
-    return this.weatherprovider;
+    weatherprovider = new WeatherProvider();
+    return weatherprovider;
   }
 
   public String getCurrentWeather(Coordinates coordinates)
