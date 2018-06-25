@@ -19,10 +19,6 @@ public class Aircraft
 
   public Aircraft()
   {}
-  public static void tester()
-  {
-    System.out.println("Hello there");
-  }
 
   private long nextId()
   {
@@ -45,7 +41,7 @@ public class Aircraft
 
   }
 
-  static public void doReader(String path)
+  public static void doReader(String path)
   {
     String line;
 

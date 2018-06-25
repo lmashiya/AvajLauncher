@@ -10,7 +10,8 @@ public class Baloon extends Aircraft
 
   public Baloon(String name , Coordinates coordinates)
   {
-
+    this.name = name;
+    this.coordinates = coordinates;
   }
 
   public void updateConditions()
