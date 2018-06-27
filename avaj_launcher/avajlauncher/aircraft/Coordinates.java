@@ -1,9 +1,7 @@
-package launcher.machines;
+package avajlauncher.aircraft;
 
-
-import launcher.weather.*;
-import launcher.machines.*;
-import launcher.simulator.*;
+import avajlauncher.weather.*;
+import avajlauncher.aircraft.*;
 
 public class Coordinates
 {
@@ -13,14 +11,14 @@ public class Coordinates
 
     public Coordinates(int longitude, int latitude, int height)
     {
-      this.longitude = longitude;
       this.latitude = latitude;
+      this.longitude = longitude;
       this.height = height;
     }
 
-    public int getLongitude()
+    public int getHeight()
     {
-      return this.longitude;
+      return this.height;
     }
 
     public int getLatitude()
@@ -28,8 +26,8 @@ public class Coordinates
       return this.latitude;
     }
 
-    public int getHealth()
+    public int getLongitude()
     {
-      return this.height;
+      return this.longitude;
     }
 }
