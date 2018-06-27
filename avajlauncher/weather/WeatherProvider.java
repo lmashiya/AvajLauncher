@@ -3,6 +3,7 @@ package avajlauncher.weather;
 import java.util.*;
 import avajlauncher.aircraft.*;
 
+
 public class WeatherProvider
 {
   private static  WeatherProvider weatherProvider = null;
@@ -21,7 +22,6 @@ public class WeatherProvider
   public String getCurrentWeather(Coordinates coordinates)
   {
     int randNum = (int)(Math.random() * weather.length);
-    System.out.println(weather);
     return weather[randNum];
   }
 }

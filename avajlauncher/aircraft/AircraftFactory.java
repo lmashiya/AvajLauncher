@@ -7,7 +7,6 @@ public class AircraftFactory
 {
   public static Flyable newAircraft(String type,String name, int longitude, int latitude, int height )
   {
-    System.out.println("Making Aircraft in Factory");
     if (longitude > 0 && latitude > 0 && height >= 1)
     {
       Coordinates coordinates = new Coordinates(longitude,latitude,height);

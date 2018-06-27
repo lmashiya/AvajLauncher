@@ -3,14 +3,15 @@ package avajlauncher.simulator;
 import java.util.*;
 import java.io.*;
 import java.lang.*;
-import avajlauncher.weather.*;
 import avajlauncher.aircraft.*;
+import avajlauncher.weather.*;
 
 public class Runner
 {
 
     private static List<Flyable> flyables = new ArrayList<Flyable>();
     private static WeatherTower weatherTower;
+    private static WriteToFile wrote = new WriteToFile();
     public static void main(String[] args)
     {
       try
@@ -28,7 +29,6 @@ public class Runner
             Integer.parseInt(line.split(" ")[3]), Integer.parseInt(line.split(" ")[4]));
             flyables.add(flyable);
           }
-          System.out.println(flyables.size());
           for(Flyable flyable: flyables)
           {
             flyable.registerTower(weatherTower);
@@ -45,6 +45,7 @@ public class Runner
             System.out.println("The number of simulations runs must be positive or more then zero");
             System.exit(1);
         }
+        br.close();
       }
       catch(FileNotFoundException no_file)
       {

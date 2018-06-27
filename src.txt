@@ -4,6 +4,7 @@
 ./avajlauncher/aircraft/Coordinates.java
 ./avajlauncher/aircraft/Helicopter.java
 ./avajlauncher/aircraft/JetPlane.java
+./avajlauncher/aircraft/WriteToFile.java
 ./avajlauncher/simulator/Runner.java
 ./avajlauncher/weather/Flyable.java
 ./avajlauncher/weather/Tower.java

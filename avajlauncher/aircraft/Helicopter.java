@@ -3,6 +3,7 @@ package avajlauncher.aircraft;
 import avajlauncher.aircraft.*;
 import avajlauncher.weather.*;
 
+
 public class Helicopter extends Aircraft implements Flyable
 {
   private WeatherTower Bweathertower;
@@ -22,22 +23,22 @@ public class Helicopter extends Aircraft implements Flyable
     if(weather.equals("RAIN"))
     {
       this.coordinates = new Coordinates(longitudeH + 5, latitudeH, heightH);
-      System.out.println("Helicopter in RAIN ");
+      System.out.println("Helicopter#" + this.name + "(" + this.id + ")" + " :Why so much rain......i hate water!!!");
     }
     else if (weather.equals("SUN"))
     {
       this.coordinates = new Coordinates(longitudeH + 10, latitudeH, heightH + 2);
-      System.out.println("Helicopter in SUN ");
+      System.out.println("Helicopter#" + this.name + "(" + this.id + ")" + " :My ass is on fire .......damnm is getting tooo hot!!!");
     }
     else if (weather.equals("SNOW"))
     {
       this.coordinates = new Coordinates(longitudeH, latitudeH, heightH - 12);
-      System.out.println("Helicopter in SNOW ");
+      System.out.println("Helicopter#" + this.name + "(" + this.id + ")" + " :Frozen the movie is playing on Etv!!!");
     }
     else if (weather.equals("FOG"))
     {
       this.coordinates = new Coordinates(longitudeH + 1, latitudeH, heightH);
-      System.out.println("Helicopter in FOG ");
+      System.out.println("Helicopter#" + this.name + "(" + this.id + ")" + " Wish i had headlights tom see through this FOG!!!");
     }
     else
     {
@@ -50,12 +51,14 @@ public class Helicopter extends Aircraft implements Flyable
 
   public void registerTower(WeatherTower weathertower)
   {
+    System.out.println("Tower 1234-543 : Helicopter#" + this.name + "(" + this.id + ")" + " has registered to the Tower" );
     this.Bweathertower = weathertower;
     weathertower.register(this);
   }
 
   public void unregisterTower(WeatherTower weathertower)
   {
+    System.out.println("Tower 1234-543 : Helicopter#" + this.name + "(" + this.id + ")" + " has unregistered to the Tower" );
     this.Bweathertower = weathertower;
     weathertower.unregister(this);
   }
