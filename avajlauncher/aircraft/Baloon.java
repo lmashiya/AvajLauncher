@@ -19,22 +19,22 @@ public class Baloon extends Aircraft implements Flyable
     int latitudeB = this.coordinates.getLatitude();
     String weather = this.Bweathertower.getWeather(this.coordinates);
 
-    if(weather == "RAIN")
+    if(weather.equalsIgnoreCase("RAIN"))
     {
       this.coordinates = new Coordinates(longitudeB, latitudeB, heightB - 5);
       System.out.println("Ballon in RAIN ");
     }
-    else if (weather == "SUN")
+    else if (weather.equalsIgnoreCase("RAIN"))
     {
-      this.coordinates = new Coordinates(longitudeB, latitudeB, heightB + 3);
+      this.coordinates = new Coordinates(longitudeB + 2, latitudeB, heightB + 4);
       System.out.println("Ballon in SUN ");
     }
-    else if (weather == "SNOW")
+    else if (weather.equalsIgnoreCase("RAIN"))
     {
       this.coordinates = new Coordinates(longitudeB, latitudeB, heightB - 15);
       System.out.println("Ballon in SNOW ");
     }
-    else if (weather == "FOG")
+    else if (weather.equalsIgnoreCase("RAIN"))
     {
       this.coordinates = new Coordinates(longitudeB, latitudeB, heightB - 3);
       System.out.println("Ballon in FOG ");

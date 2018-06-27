@@ -5,7 +5,7 @@ import avajlauncher.weather.*;
 
 public class Helicopter extends Aircraft implements Flyable
 {
-  private WeatherTower Hweathertower;
+  private WeatherTower Bweathertower;
 
   public Helicopter(String name, Coordinates coordinates)
   {
@@ -17,26 +17,26 @@ public class Helicopter extends Aircraft implements Flyable
     int heightH = this.coordinates.getHeight();
     int longitudeH = this.coordinates.getLongitude();
     int latitudeH = this.coordinates.getLatitude();
-    String weather = this.Hweathertower.getWeather(this.coordinates);
+    String weather = this.Bweathertower.getWeather(this.coordinates);
 
-    if(weather == "RAIN")
+    if(weather.equalsIgnoreCase("RAIN"))
     {
-      this.coordinates = new Coordinates(longitudeH, latitudeH, heightH - 5);
+      this.coordinates = new Coordinates(longitudeH + 5, latitudeH, heightH);
       System.out.println("Helicopter in RAIN ");
     }
-    else if (weather == "SUN")
+    else if (weather.equalsIgnoreCase("RAIN"))
     {
-      this.coordinates = new Coordinates(longitudeH, latitudeH, heightH + 3);
+      this.coordinates = new Coordinates(longitudeH + 10, latitudeH, heightH + 2);
       System.out.println("Helicopter in SUN ");
     }
-    else if (weather == "SNOW")
+    else if (weather.equalsIgnoreCase("RAIN"))
     {
-      this.coordinates = new Coordinates(longitudeH, latitudeH, heightH - 15);
+      this.coordinates = new Coordinates(longitudeH, latitudeH, heightH - 12);
       System.out.println("Helicopter in SNOW ");
     }
-    else if (weather == "FOG")
+    else if (weather.equalsIgnoreCase("RAIN"))
     {
-      this.coordinates = new Coordinates(longitudeH, latitudeH, heightH - 3);
+      this.coordinates = new Coordinates(longitudeH + 1, latitudeH, heightH);
       System.out.println("Helicopter in FOG ");
     }
     else
@@ -45,20 +45,20 @@ public class Helicopter extends Aircraft implements Flyable
       System.exit(1);
     }
     if(this.coordinates.getHeight() <= 0)
-      unregisterTower(Hweathertower);
+      unregisterTower(Bweathertower);
   }
 
   public void registerTower(WeatherTower weathertower)
   {
     System.out.println("registered the JetPlane");
-    this.Hweathertower = weathertower;
+    this.Bweathertower = weathertower;
     weathertower.register(this);
   }
 
   public void unregisterTower(WeatherTower weathertower)
   {
     System.out.println("unregistered the JetPlane");
-    this.Hweathertower = weathertower;
+    this.Bweathertower = weathertower;
     weathertower.unregister(this);
   }
 

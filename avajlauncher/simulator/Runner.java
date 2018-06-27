@@ -2,6 +2,7 @@ package avajlauncher.simulator;
 
 import java.util.*;
 import java.io.*;
+import java.lang.*;
 import avajlauncher.weather.*;
 import avajlauncher.aircraft.*;
 
@@ -19,7 +20,7 @@ public class Runner
 
         if (line != null)
         {
-        //  weathertower = new WeatherTower();
+          weathertower = new WeatherTower();
           int simulations = Integer.parseInt(line.split(" ")[0]);
           System.out.println("simulations----> " + simulations);
           while ((line = br.readLine()) != null)
@@ -29,6 +30,9 @@ public class Runner
             System.out.println("Hey You im here");
             Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1], Integer.parseInt(line.split(" ")[2]),
             Integer.parseInt(line.split(" ")[3]), Integer.parseInt(line.split(" ")[4]));
+            Coordinates coord = new Coordinates(Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),Integer.parseInt(line.split(" ")[4]));
+            String weather = WeatherProvider.getProvider().getCurrentWeather(coord);
+            System.out.println("getWeather -----> " + weather);
             if (flyable == null)
               flyables.add(flyable);
             System.out.println("Added all the flyables to the list");
@@ -36,10 +40,17 @@ public class Runner
           System.out.println("Going to the for each loop");
           for(Flyable flyable: flyables)
           {
+            System.out.println("inside for loop");
             System.out.println(flyable);
             flyable.registerTower(weathertower);
           }
-          
+
+          for (int i = 0; i < simulations; i++)
+          {
+            System.out.println("Changed weather-----> " + i);
+            weathertower.changeWeather();
+          }
+
         }
         else
         {

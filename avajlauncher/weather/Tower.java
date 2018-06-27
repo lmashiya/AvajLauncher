@@ -10,6 +10,7 @@ public class Tower
 
     public void register(Flyable flyable)
     {
+      System.out.println("Registering");
       if(observers.contains(flyable))
         return;
       else
@@ -18,6 +19,7 @@ public class Tower
 
     public void unregister(Flyable flyable)
     {
+      System.out.println("Unregistring");
       if(unregistered.contains(flyable))
         return;
       else
@@ -28,6 +30,7 @@ public class Tower
     {
       for(Flyable flyers: observers)
       {
+        System.out.println("Doing the updating");
         flyers.updateConditions();
       }
       observers.removeAll(unregistered);
