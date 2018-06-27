@@ -19,29 +19,29 @@ public class JetPlane extends Aircraft implements Flyable
     int latitudeJ = this.coordinates.getLatitude();
     String weather = this.Bweathertower.getWeather(this.coordinates);
 
-    if(weather.equalsIgnoreCase("RAIN"))
+    if(weather.equals("RAIN"))
     {
       this.coordinates = new Coordinates(longitudeJ, latitudeJ + 5, heightJ);
       System.out.println("JetPlane in RAIN ");
     }
-    else if (weather.equalsIgnoreCase("RAIN"))
+    else if (weather.equals("SUN"))
     {
       this.coordinates = new Coordinates(longitudeJ, latitudeJ + 10, heightJ + 2);
       System.out.println("JetPlane in SUN ");
     }
-    else if (weather.equalsIgnoreCase("RAIN"))
+    else if (weather.equals("SNOW"))
     {
       this.coordinates = new Coordinates(longitudeJ, latitudeJ, heightJ - 7);
       System.out.println("JetPlane in SNOW ");
     }
-    else if (weather.equalsIgnoreCase("RAIN"))
+    else if (weather.equals("FOG"))
     {
       this.coordinates = new Coordinates(longitudeJ, latitudeJ + 1, heightJ);
       System.out.println("JetPlane in FOG ");
     }
     else
     {
-      System.out.println("Type of weather doesnt exist.....Please check");
+      System.out.println("Type of weather doesnt exist.....Please check Jrtplane");
       System.exit(1);
     }
     if(this.coordinates.getHeight() <= 0)
@@ -50,14 +50,12 @@ public class JetPlane extends Aircraft implements Flyable
 
   public void registerTower(WeatherTower weathertower)
   {
-    System.out.println("registered the JetPlane");
     this.Bweathertower = weathertower;
     weathertower.register(this);
   }
 
   public void unregisterTower(WeatherTower weathertower)
   {
-    System.out.println("unregistered the JetPlane");
     this.Bweathertower = weathertower;
     weathertower.unregister(this);
   }

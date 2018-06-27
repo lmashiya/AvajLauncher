@@ -13,7 +13,6 @@ public class WeatherProvider
 
   public static WeatherProvider getProvider()
   {
-    System.out.println("WeatherProvider inside ");
     if(weatherProvider == null)
       weatherProvider = new WeatherProvider();
     return weatherProvider;
@@ -22,7 +21,6 @@ public class WeatherProvider
   public String getCurrentWeather(Coordinates coordinates)
   {
     int randNum = (int)(Math.random() * weather.length);
-    System.out.println("Weather chosen " + randNum);
     System.out.println(weather);
     return weather[randNum];
   }

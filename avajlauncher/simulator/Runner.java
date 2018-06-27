@@ -10,7 +10,7 @@ public class Runner
 {
 
     private static List<Flyable> flyables = new ArrayList<Flyable>();
-    private static WeatherTower weathertower;
+    private static WeatherTower weatherTower;
     public static void main(String[] args)
     {
       try
@@ -20,35 +20,23 @@ public class Runner
 
         if (line != null)
         {
-          weathertower = new WeatherTower();
+          weatherTower = new WeatherTower();
           int simulations = Integer.parseInt(line.split(" ")[0]);
-          System.out.println("simulations----> " + simulations);
           while ((line = br.readLine()) != null)
           {
-            System.out.println("In the while loop");
-            System.out.println(line);
-            System.out.println("Hey You im here");
             Flyable flyable = AircraftFactory.newAircraft(line.split(" ")[0], line.split(" ")[1], Integer.parseInt(line.split(" ")[2]),
             Integer.parseInt(line.split(" ")[3]), Integer.parseInt(line.split(" ")[4]));
-            Coordinates coord = new Coordinates(Integer.parseInt(line.split(" ")[2]), Integer.parseInt(line.split(" ")[3]),Integer.parseInt(line.split(" ")[4]));
-            String weather = WeatherProvider.getProvider().getCurrentWeather(coord);
-            System.out.println("getWeather -----> " + weather);
-            if (flyable == null)
-              flyables.add(flyable);
-            System.out.println("Added all the flyables to the list");
+            flyables.add(flyable);
           }
-          System.out.println("Going to the for each loop");
+          System.out.println(flyables.size());
           for(Flyable flyable: flyables)
           {
-            System.out.println("inside for loop");
-            System.out.println(flyable);
-            flyable.registerTower(weathertower);
+            flyable.registerTower(weatherTower);
           }
 
           for (int i = 0; i < simulations; i++)
           {
-            System.out.println("Changed weather-----> " + i);
-            weathertower.changeWeather();
+            weatherTower.changeWeather();
           }
 
         }
