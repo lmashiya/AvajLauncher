@@ -2,10 +2,12 @@ package avajlauncher.aircraft;
 
 import avajlauncher.aircraft.*;
 import avajlauncher.weather.*;
+import avajlauncher.writertofile.*;
 
 public class Baloon extends Aircraft implements Flyable
 {
   private WeatherTower Bweathertower;
+  Writter obj = new Writter();
 
   Baloon(String name, Coordinates coordinates)
   {
@@ -22,22 +24,22 @@ public class Baloon extends Aircraft implements Flyable
     if(weather.equals("RAIN"))
     {
       this.coordinates = new Coordinates(longitudeB, latitudeB, heightB - 5);
-      System.out.println("Baloon#" + this.name + "(" + this.id + ")" + " :The clouds are pissing all over my baloon");
+      obj.writetofile("Baloon#" + this.name + "(" + this.id + ")" + " :The clouds are pissing all over my baloon");
     }
     else if (weather.equals("SUN"))
     {
       this.coordinates = new Coordinates(longitudeB + 2, latitudeB, heightB + 4);
-      System.out.println("Baloon#" + this.name + "(" + this.id + ")" + " :My choclates are melting");
+      obj.writetofile("Baloon#" + this.name + "(" + this.id + ")" + " :My choclates are melting");
     }
     else if (weather.equals("SNOW"))
     {
       this.coordinates = new Coordinates(longitudeB, latitudeB, heightB - 15);
-      System.out.println("Baloon#" + this.name + "(" + this.id + ")" + " :The damn heater aint working im dying of this cold!!!");
+      obj.writetofile("Baloon#" + this.name + "(" + this.id + ")" + " :The damn heater aint working im dying of this cold!!!");
     }
     else if (weather.equals("FOG"))
     {
       this.coordinates = new Coordinates(longitudeB, latitudeB, heightB - 3);
-      System.out.println("Baloon#" + this.name + "(" + this.id + ")" + " :I cant see much but i can bet isaw a Lochness monster flying past");
+      obj.writetofile("Baloon#" + this.name + "(" + this.id + ")" + " :I cant see much but i can bet isaw a Lochness monster flying past");
     }
     else
     {
@@ -50,14 +52,14 @@ public class Baloon extends Aircraft implements Flyable
 
   public void registerTower(WeatherTower weathertower)
   {
-    System.out.println("Tower 1234-543 : Baloon#" + this.name + "(" + this.id + ")" + " has registered to the Tower" );
+    obj.writetofile("Tower 1234-543 : Baloon#" + this.name + "(" + this.id + ")" + " has registered to the Tower" );
     this.Bweathertower = weathertower;
     weathertower.register(this);
   }
 
   public void unregisterTower(WeatherTower weathertower)
   {
-    System.out.println("Tower 1234-543 : Baloon#" + this.name + "(" + this.id + ")" + " has unregistered to the Tower" );
+    obj.writetofile("Tower 1234-543 : Baloon#" + this.name + "(" + this.id + ")" + " has unregistered to the Tower" );
     this.Bweathertower = weathertower;
     weathertower.unregister(this);
   }

@@ -5,18 +5,19 @@ import java.io.*;
 import java.lang.*;
 import avajlauncher.aircraft.*;
 import avajlauncher.weather.*;
+import avajlauncher.writertofile.*;
 
 public class Runner
 {
 
     private static List<Flyable> flyables = new ArrayList<Flyable>();
     private static WeatherTower weatherTower;
-    private static WriteToFile wrote = new WriteToFile();
+    private static Writter wrote = new Writter();
     public static void main(String[] args)
     {
-      wrote.writetofile("Hello there");
       try
       {
+        // wrote.writetofile("Hello there");
         BufferedReader br = new BufferedReader(new FileReader(args[0]));
         String line = br.readLine();
 
@@ -57,6 +58,5 @@ public class Runner
         System.out.println(ex.toString());
       }
     }
-    wrote.closeFile();
 
 }

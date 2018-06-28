@@ -2,6 +2,7 @@ package avajlauncher.weather;
 
 import avajlauncher.aircraft.*;
 import java.util.*;
+import avajlauncher.writertofile.*;
 
 public class Tower
 {

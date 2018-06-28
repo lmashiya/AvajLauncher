@@ -2,6 +2,7 @@ package avajlauncher.weather;
 
 import avajlauncher.aircraft.*;
 import avajlauncher.weather.*;
+import avajlauncher.writertofile.*;
 
 public class WeatherTower extends Tower
 {
