@@ -14,6 +14,7 @@ public class Runner
     private static WriteToFile wrote = new WriteToFile();
     public static void main(String[] args)
     {
+      wrote.writetofile("Hello there");
       try
       {
         BufferedReader br = new BufferedReader(new FileReader(args[0]));
@@ -56,4 +57,6 @@ public class Runner
         System.out.println(ex.toString());
       }
     }
+    wrote.closeFile();
+
 }

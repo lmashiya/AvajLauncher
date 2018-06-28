@@ -12,28 +12,36 @@ public class WriteToFile {
 
 	public WriteToFile()
 	{
-		try{
+		try
+		{
 			file = new File("Simulated.txt");
 			fileWriter = new FileWriter(file);
 			output = new BufferedWriter(fileWriter);
-		} catch (IOException e)
+		}
+		catch (IOException e)
 		{ }
 	}
 
 	public void	writetofile(String str) {
-		try {
+		try
+		{
 			output.write(str);
 			output.newLine();
-		} catch (IOException e) {
+		}
+		catch (IOException e)
+		{
 			System.out.println(e.toString());
 		}
 	}
 
 	public void closeFile() {
-		try {
+		try
+		 {
 			if (output != null)
 				output.close();
-		} catch (Exception ex) {
+		}
+		catch (Exception ex)
+		{
 			System.out.println("File not closing");
 		}
 	}
